@@ -1,0 +1,72 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "2700:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+
+  chinese:
+    build:
+      context: .
+      dockerfile: Dockerfile.cn
+    ports:
+      - "2701:2700"
+
+  german:
+    build:
+      context: .
+      dockerfile: Dockerfile.de
+    ports:
+      - "2702:2700"
+
+  english:
+    build:
+      context: .
+      dockerfile: Dockerfile.en
+    ports:
+      - "2703:2700"
+
+  spanish:
+    build:
+      context: .
+      dockerfile: Dockerfile.es
+    ports:
+      - "2704:2700"
+
+  french:
+    build:
+      context: .
+      dockerfile: Dockerfile.fr
+    ports:
+      - "2705:2700"
+
+  hindi:
+    build:
+      context: .
+      dockerfile: Dockerfile.hi
+    ports:
+      - "2706:2700"
+
+  italian:
+    build:
+      context: .
+      dockerfile: Dockerfile.it
+    ports:
+      - "2707:2700"
+
+  japanese:
+    build:
+      context: .
+      dockerfile: Dockerfile.ja
+    ports:
+      - "2708:2700"
+
+  russian:
+    build:
+      context: .
+      dockerfile: Dockerfile.ru
+    ports:
+      - "2709:2700"
